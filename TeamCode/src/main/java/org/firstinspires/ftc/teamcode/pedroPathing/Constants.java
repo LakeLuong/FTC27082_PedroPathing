@@ -21,11 +21,11 @@ public class Constants {
             .rightFrontMotorName("rightFront")
             .rightRearMotorName("rightBack")
             .leftRearMotorName("leftBack")
-            //.leftFrontMotorName("leftFront")
-            //.leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
+            .leftFrontMotorName("leftFront")
+            .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
-            .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD);
+            .rightFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
+            .rightRearMotorDirection(DcMotorSimple.Direction.REVERSE);
 
 
     public static PinpointConstants localizerConstants = new PinpointConstants()
