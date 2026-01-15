@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.pedroPathing;
 
+import com.bylazar.configurables.annotations.Configurable;
+import com.pedropathing.control.FilteredPIDFCoefficients;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.follower.FollowerConstants;
 import com.pedropathing.ftc.FollowerBuilder;
@@ -11,10 +13,20 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-
+@Configurable
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-            .mass(5.1);
+            .mass(5.1)
+            .forwardZeroPowerAcceleration(-30.130834655)
+            .lateralZeroPowerAcceleration(-47.4235480324)
+            .drivePIDFCoefficients( new FilteredPIDFCoefficients( 0, 0, 0, 0, 0))
+            .secondaryDrivePIDFCoefficients( new FilteredPIDFCoefficients(0,0,0,0,0) )
+            .useSecondaryDrivePIDF(true)
+            .useSecondaryTranslationalPIDF(true)
+
+            .useSecondaryHeadingPIDF(true)
+            ;
+
 
     public static MecanumConstants driveConstants = new MecanumConstants()
             .maxPower(1)
@@ -25,7 +37,10 @@ public class Constants {
             .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
-            .rightRearMotorDirection(DcMotorSimple.Direction.REVERSE);
+            .rightRearMotorDirection(DcMotorSimple.Direction.REVERSE)
+            .xVelocity(61.9961082638)
+            .yVelocity(49.744707531);
+
 
 
     public static PinpointConstants localizerConstants = new PinpointConstants()
